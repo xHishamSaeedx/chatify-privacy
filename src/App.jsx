@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import chatifyLogo from "/chatify_logo2.png";
 import AccountDeletionRequest from "./AccountDeletionRequest";
@@ -11,8 +11,12 @@ function PrivacyPolicy() {
         <h1>Privacy Policy</h1>
         <p className="app-subtitle">Chatify - Your Privacy Matters</p>
         <nav className="privacy-nav">
-          <Link to="/" className="nav-link active">Privacy Policy</Link>
-          <Link to="/account-deletion" className="nav-link">Request Account Deletion</Link>
+          <Link to="/" className="nav-link active">
+            Privacy Policy
+          </Link>
+          <Link to="/account-deletion" className="nav-link">
+            Request Account Deletion
+          </Link>
         </nav>
       </header>
 
@@ -170,6 +174,7 @@ function App() {
       <Routes>
         <Route path="/" element={<PrivacyPolicy />} />
         <Route path="/account-deletion" element={<AccountDeletionRequest />} />
+        <Route path="*" element={<PrivacyPolicy />} />
       </Routes>
     </Router>
   );
