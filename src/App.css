@@ -1,0 +1,253 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #FFF9F9;
+  color: #2C2C2C;
+  line-height: 1.6;
+}
+
+/* Main container */
+.privacy-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #FFF9F9;
+  min-height: 100vh;
+}
+
+/* Header styles */
+.privacy-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px 0;
+  border-bottom: 3px solid #FF7F8A;
+  background: linear-gradient(135deg, #FFF9F9 0%, #FF7F8A 100%);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(255, 127, 138, 0.1);
+}
+
+.chatify-logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.chatify-logo:hover {
+  transform: scale(1.05);
+}
+
+.privacy-header h1 {
+  color: #2C2C2C;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.app-subtitle {
+  color: #5DADE2;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+/* Main content */
+.privacy-content {
+  background-color: white;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.policy-section {
+  margin-bottom: 35px;
+}
+
+.policy-section:last-child {
+  margin-bottom: 0;
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  color: #2C2C2C;
+  background-color: #FFF9F9;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid #FF7F8A;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.policy-section h2 {
+  color: #2C2C2C;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #FF7F8A;
+  position: relative;
+}
+
+.policy-section h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 50px;
+  height: 2px;
+  background-color: #FFD166;
+}
+
+.policy-section h3 {
+  color: #5DADE2;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 20px 0 10px 0;
+}
+
+.policy-section p {
+  margin-bottom: 15px;
+  color: #2C2C2C;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.policy-section ul {
+  margin: 15px 0;
+  padding-left: 25px;
+}
+
+.policy-section li {
+  margin-bottom: 8px;
+  color: #2C2C2C;
+  line-height: 1.6;
+}
+
+.policy-section strong {
+  color: #5DADE2;
+  font-weight: 600;
+}
+
+/* Contact info section */
+.contact-info {
+  background-color: #FFF9F9;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid #5DADE2;
+  margin-top: 15px;
+}
+
+.contact-info p {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* Footer */
+.privacy-footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #2C2C2C;
+  color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.privacy-footer p {
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .privacy-container {
+    padding: 15px;
+  }
+  
+  .privacy-content {
+    padding: 25px;
+  }
+  
+  .privacy-header h1 {
+    font-size: 2rem;
+  }
+  
+  .chatify-logo {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .policy-section h2 {
+    font-size: 1.3rem;
+  }
+  
+  .policy-section h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .privacy-container {
+    padding: 10px;
+  }
+  
+  .privacy-content {
+    padding: 20px;
+  }
+  
+  .privacy-header {
+    padding: 20px 0;
+  }
+  
+  .privacy-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .app-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+.policy-section h2:focus,
+.policy-section h3:focus {
+  outline: 2px solid #FFD166;
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .privacy-container {
+    max-width: none;
+    padding: 0;
+  }
+  
+  .privacy-header {
+    background: white !important;
+    border-bottom: 2px solid #2C2C2C;
+  }
+  
+  .privacy-content {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+}

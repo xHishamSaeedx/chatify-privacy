@@ -1,0 +1,68 @@
+Welcome to Chatify! Your privacy is important to us. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application ("App").
+
+1. Information We Collect
+We collect the minimum amount of data necessary to allow you to use the app.
+
+a. Information You Provide
+Username: Required to identify users.
+
+Shared Content: Images, text, and files shared in chats.
+
+b. Automatically Collected Information
+Device Information: Device type, operating system, and general technical info to ensure compatibility and improve performance.
+
+Usage Data: Anonymous statistics like session duration, crash reports, and feature usage.
+
+IP Address & Region (approximate): Used for moderation, abuse prevention, and compliance.
+
+2. How We Use Your Information
+We use the collected information to:
+
+Provide and maintain the Chatify app.
+
+Connect users for random chats.
+
+Improve and personalize your experience.
+
+Prevent abuse and enforce our Terms of Use.
+
+Comply with legal obligations (if any).
+
+3. Data Sharing & Disclosure
+We do not sell or share your personal information with third parties for marketing purposes. Your data may be shared:
+
+With moderation systems or admins in case of abuse or violations.
+
+When legally required (e.g., under law enforcement requests).
+
+With third-party service providers (e.g., analytics or cloud services), strictly under confidentiality agreements.
+
+4. Friend Feature & Usernames
+Users may choose to share their usernames with others to continue chatting later. This is optional and completely at your discretion.
+
+5. Image & File Sharing
+Media shared in conversations is stored temporarily on secure servers for delivery and then automatically deleted. We do not scan or use your media for any purpose beyond service delivery.
+
+6. Data Security
+We use encryption and secure protocols to protect your data. However, please remember that no internet transmission is ever 100% secure.
+
+7. Children's Privacy
+Chatify is not intended for children under 18. We do not knowingly collect personal information from anyone under this age. If you're a parent and believe your child has used the app, contact us to request removal.
+
+8. Your Rights
+Depending on your region, you may have the right to:
+
+Request access to your data.
+
+Request deletion of your account.
+
+Withdraw consent for data use.
+
+To request any of these, contact us at [your support email].
+
+9. Changes to This Policy
+We may update this Privacy Policy from time to time. Updates will be posted in the app or on our website. Continued use of the app means you accept the new policy.
+
+10. Contact Us
+If you have any questions or concerns, reach out to us at:
+
