@@ -1,25 +1,27 @@
-import { useState } from 'react';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { db } from './firebase';
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "./firebase";
+import { Link } from "react-router-dom";
 import chatifyLogo from "/chatify_logo2.png";
-import './AccountDeletionRequest.css';
+// import './AccountDeletionRequest.css';
 
 function AccountDeletionRequest() {
+  console.log("AccountDeletionRequest component is rendering");
+
   const [formData, setFormData] = useState({
-    name: '',
-    username: '',
-    email: '',
-    reason: ''
+    name: "",
+    username: "",
+    email: "",
+    reason: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -30,22 +32,22 @@ function AccountDeletionRequest() {
 
     try {
       // Add document to 'account_deletion_requests' collection
-      await addDoc(collection(db, 'account_deletion_requests'), {
+      await addDoc(collection(db, "account_deletion_requests"), {
         ...formData,
         requestDate: serverTimestamp(),
-        status: 'pending'
+        status: "pending",
       });
 
-      setSubmitStatus('success');
+      setSubmitStatus("success");
       setFormData({
-        name: '',
-        username: '',
-        email: '',
-        reason: ''
+        name: "",
+        username: "",
+        email: "",
+        reason: "",
       });
     } catch (error) {
-      console.error('Error submitting request:', error);
-      setSubmitStatus('error');
+      console.error("Error submitting request:", error);
+      setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
     }
@@ -58,8 +60,12 @@ function AccountDeletionRequest() {
         <h1>Account Deletion Request</h1>
         <p className="app-subtitle">Chatify - Your Privacy Matters</p>
         <nav className="privacy-nav">
-          <Link to="/" className="nav-link">Privacy Policy</Link>
-          <Link to="/account-deletion" className="nav-link active">Request Account Deletion</Link>
+          <Link to="/" className="nav-link">
+            Privacy Policy
+          </Link>
+          <Link to="/account-deletion" className="nav-link active">
+            Request Account Deletion
+          </Link>
         </nav>
       </header>
 
@@ -67,21 +73,28 @@ function AccountDeletionRequest() {
         <div className="request-form-container">
           <h2>Request Account Deletion</h2>
           <p className="form-description">
-            Please fill out the form below to request the deletion of your account and associated data.
-            We will process your request within 30 days as required by privacy regulations.
+            Please fill out the form below to request the deletion of your
+            account and associated data. We will process your request within 30
+            days as required by privacy regulations.
           </p>
 
-          {submitStatus === 'success' && (
+          {submitStatus === "success" && (
             <div className="success-message">
               <h3>Request Submitted Successfully!</h3>
-              <p>Your account deletion request has been received. We will process it within 30 days and contact you at the provided email address.</p>
+              <p>
+                Your account deletion request has been received. We will process
+                it within 30 days and contact you at the provided email address.
+              </p>
             </div>
           )}
 
-          {submitStatus === 'error' && (
+          {submitStatus === "error" && (
             <div className="error-message">
               <h3>Submission Failed</h3>
-              <p>There was an error submitting your request. Please try again or contact support.</p>
+              <p>
+                There was an error submitting your request. Please try again or
+                contact support.
+              </p>
             </div>
           )}
 
@@ -139,12 +152,9 @@ function AccountDeletionRequest() {
 
             <div className="form-group checkbox-group">
               <label className="checkbox-label">
-                <input
-                  type="checkbox"
-                  required
-                />
-                <span className="checkmark"></span>
-                I understand that this action will permanently delete my account and all associated data.
+                <input type="checkbox" required />
+                <span className="checkmark"></span>I understand that this action
+                will permanently delete my account and all associated data.
               </label>
             </div>
 
@@ -153,7 +163,7 @@ function AccountDeletionRequest() {
               className="submit-button"
               disabled={isSubmitting}
             >
-              {isSubmitting ? 'Submitting...' : 'Request Account Deletion'}
+              {isSubmitting ? "Submitting..." : "Request Account Deletion"}
             </button>
           </form>
 
@@ -162,8 +172,12 @@ function AccountDeletionRequest() {
             <ul>
               <li>Your request will be reviewed within 30 days</li>
               <li>We will contact you at the provided email address</li>
-              <li>All your data will be permanently deleted from our systems</li>
-              <li>You will receive confirmation once the deletion is complete</li>
+              <li>
+                All your data will be permanently deleted from our systems
+              </li>
+              <li>
+                You will receive confirmation once the deletion is complete
+              </li>
             </ul>
           </div>
         </div>
@@ -177,4 +191,4 @@ function AccountDeletionRequest() {
   );
 }
 
-export default AccountDeletionRequest; 
+export default AccountDeletionRequest;
