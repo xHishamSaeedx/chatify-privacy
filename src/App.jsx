@@ -1,13 +1,19 @@
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import chatifyLogo from "/chatify_logo2.png";
+import AccountDeletionRequest from "./AccountDeletionRequest";
 
-function App() {
+function PrivacyPolicy() {
   return (
     <div className="privacy-container">
       <header className="privacy-header">
         <img src={chatifyLogo} alt="Chatify Logo" className="chatify-logo" />
         <h1>Privacy Policy</h1>
         <p className="app-subtitle">Chatify - Your Privacy Matters</p>
+        <nav className="privacy-nav">
+          <Link to="/" className="nav-link active">Privacy Policy</Link>
+          <Link to="/account-deletion" className="nav-link">Request Account Deletion</Link>
+        </nav>
       </header>
 
       <main className="privacy-content">
@@ -131,7 +137,13 @@ function App() {
             <li>Request deletion of your account.</li>
             <li>Withdraw consent for data use.</li>
           </ul>
-          <p>To request any of these, contact us at [your support email].</p>
+          <p>
+            To request any of these, please use our{" "}
+            <Link to="/account-deletion" className="inline-link">
+              Account Deletion Request form
+            </Link>
+            .
+          </p>
         </section>
 
         <section className="policy-section">
@@ -149,6 +161,17 @@ function App() {
         <p>Last updated: {new Date().toLocaleDateString()}</p>
       </footer>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<PrivacyPolicy />} />
+        <Route path="/account-deletion" element={<AccountDeletionRequest />} />
+      </Routes>
+    </Router>
   );
 }
 
