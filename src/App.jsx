@@ -168,20 +168,7 @@ function PrivacyPolicy() {
   );
 }
 
-function TestComponent() {
-  return (
-    <div style={{ padding: "20px", textAlign: "center" }}>
-      <h1>Account Deletion Request - TEST</h1>
-      <p>This is a test component to verify routing is working.</p>
-      <p>Current URL: {window.location.pathname}</p>
-    </div>
-  );
-}
-
 function App() {
-  console.log("Current pathname:", window.location.pathname);
-  console.log("AccountDeletionRequest component:", AccountDeletionRequest);
-
   return (
     <Router>
       <Routes>

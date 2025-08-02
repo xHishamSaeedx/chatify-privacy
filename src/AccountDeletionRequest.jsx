@@ -3,11 +3,9 @@ import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "./firebase";
 import { Link } from "react-router-dom";
 import chatifyLogo from "/chatify_logo2.png";
-// import './AccountDeletionRequest.css';
+import "./AccountDeletionRequest.css";
 
 function AccountDeletionRequest() {
-  console.log("AccountDeletionRequest component is rendering");
-
   const [formData, setFormData] = useState({
     name: "",
     username: "",
