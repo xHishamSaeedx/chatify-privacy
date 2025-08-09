@@ -64,6 +64,9 @@ function AccountDeletionRequest() {
           <Link to="/account-deletion" className="nav-link active">
             Request Account Deletion
           </Link>
+          <Link to="/reporting" className="nav-link">
+            Reporting System
+          </Link>
         </nav>
       </header>
 

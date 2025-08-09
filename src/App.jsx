@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import chatifyLogo from "/chatify_logo2.png";
 import AccountDeletionRequest from "./AccountDeletionRequest";
+import ReportingPage from "./ReportingPage";
 
 function PrivacyPolicy() {
   return (
@@ -16,6 +17,9 @@ function PrivacyPolicy() {
           </Link>
           <Link to="/account-deletion" className="nav-link">
             Request Account Deletion
+          </Link>
+          <Link to="/reporting" className="nav-link">
+            Reporting System
           </Link>
         </nav>
       </header>
@@ -174,6 +178,7 @@ function App() {
       <Routes>
         <Route path="/" element={<PrivacyPolicy />} />
         <Route path="/account-deletion" element={<AccountDeletionRequest />} />
+        <Route path="/reporting" element={<ReportingPage />} />
       </Routes>
     </Router>
   );
