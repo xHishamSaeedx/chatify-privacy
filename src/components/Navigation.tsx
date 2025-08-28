@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import ThemeToggle from "./ThemeToggle";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -55,9 +56,9 @@ const Navigation = () => {
           <Link href="/" className="flex items-center space-x-2">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center"
+              className="w-8 h-8 flex items-center justify-center"
             >
-              <span className="text-primary-foreground text-sm font-bold">C</span>
+              <img src="/ChatGPT Image Aug 28, 2025, 08_56_54 PM.png" alt="Chatify logo" className="w-8 h-8 object-contain" />
             </motion.div>
             <span className="text-xl font-bold gradient-text">Chatify</span>
           </Link>
@@ -78,6 +79,7 @@ const Navigation = () => {
                 {item.label}
               </Link>
             ))}
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
@@ -130,10 +132,13 @@ const Navigation = () => {
                         ? "text-primary bg-primary/10"
                         : "text-muted-foreground"
                     )}
-                  >
+                                    >
                     {item.label}
                   </Link>
                 ))}
+                <div className="flex justify-center pt-4 border-t border-border">
+                  <ThemeToggle />
+                </div>
               </div>
             </motion.div>
           )}

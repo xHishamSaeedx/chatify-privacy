@@ -33,25 +33,34 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 262.1 83.3% 57.8%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --background: 270 50% 8%; /* Rich dark purple background */
+    --foreground: 0 0% 98%;
+    --card: 270 45% 12%; /* Slightly lighter purple for cards */
+    --card-foreground: 0 0% 98%;
+    --popover: 270 45% 12%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 262.1 83.3% 57.8%; /* Keep the same purple primary */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 270 40% 16%; /* Purple secondary */
+    --secondary-foreground: 0 0% 98%;
+    --muted: 270 40% 16%;
+    --muted-foreground: 270 10% 70%;
+    --accent: 270 40% 16%;
+    --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 270 35% 20%; /* Purple border */
+    --input: 270 45% 12%;
     --ring: 262.1 83.3% 57.8%;
+    
+    /* Dark theme gradient */
+    --hero-gradient: linear-gradient(135deg, hsl(270, 60%, 15%) 0%, hsl(280, 55%, 20%) 50%, hsl(290, 50%, 25%) 100%);
+    
+    /* Dark theme app-inspired accent colors */
+    --app-accent: 0 100% 71%; /* Keep the same peach pink */
+    --app-secondary: 207 70% 63%; /* Keep the same sky blue */
+    --app-warm: 45 100% 71%; /* Keep the same warm yellow */
+    --app-success: 142 76% 36%; /* Keep the same success green */
   }
 }
 
@@ -61,6 +70,42 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  
+  /* Dark theme gradient backgrounds */
+  .dark body {
+    background: linear-gradient(135deg, hsl(270, 50%, 8%) 0%, hsl(280, 45%, 12%) 50%, hsl(290, 40%, 16%) 100%);
+    background-attachment: fixed;
+  }
+  
+  .dark .nav {
+    background: linear-gradient(135deg, rgba(270, 50%, 8%, 0.95) 0%, rgba(280, 45%, 12%, 0.95) 100%);
+    backdrop-filter: blur(10px);
+  }
+  
+  .dark .feature-card {
+    background: linear-gradient(135deg, hsl(270, 45%, 12%) 0%, hsl(280, 40%, 16%) 100%);
+    border: 1px solid hsl(270, 35%, 20%);
+  }
+  
+  .dark .hero {
+    background: linear-gradient(135deg, hsl(270, 50%, 8%) 0%, hsl(280, 45%, 12%) 50%, hsl(290, 40%, 16%) 100%);
+  }
+  
+  .dark .features {
+    background: linear-gradient(135deg, hsl(270, 45%, 12%) 0%, hsl(280, 40%, 16%) 100%);
+  }
+  
+  .dark .newsletter {
+    background: linear-gradient(135deg, hsl(270, 45%, 12%) 0%, hsl(280, 40%, 16%) 100%);
+  }
+  
+  .dark .cta {
+    background: linear-gradient(135deg, hsl(270, 50%, 8%) 0%, hsl(280, 45%, 12%) 100%);
+  }
+  
+  .dark .footer {
+    background: linear-gradient(135deg, hsl(270, 50%, 6%) 0%, hsl(280, 45%, 10%) 100%);
   }
 }
 
@@ -74,7 +119,7 @@
   }
   
   .feature-card {
-    @apply bg-[#dcbdf6] border border-border rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300;
+    @apply bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300;
   }
   
   .btn-primary {

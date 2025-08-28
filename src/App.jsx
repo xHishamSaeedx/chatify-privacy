@@ -4,6 +4,7 @@ import "./index.css";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import { trackPageView } from "./utils/analytics";
+import { ThemeProvider } from "./contexts/ThemeContext";
 
 // Import existing pages (non-lazy critical routes)
 import AccountDeletionRequest from "./AccountDeletionRequest";
@@ -184,23 +185,25 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <Suspense fallback={<div className="page-loading" role="status" aria-live="polite">Loading…</div>}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/features" element={<Features />} />
-          <Route path="/how-it-works" element={<HowItWorks />} />
-          <Route path="/download" element={<Download />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/support" element={<Support />} />
-          <Route path="/partner-program" element={<PartnerProgram />} />
-          <Route path="/api-docs" element={<ApiDocs />} />
-          <Route path="/account-deletion" element={<AccountDeletionRequest />} />
-          <Route path="/reporting" element={<ReportingPage />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        </Routes>
-      </Suspense>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <Suspense fallback={<div className="page-loading" role="status" aria-live="polite">Loading…</div>}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/features" element={<Features />} />
+            <Route path="/how-it-works" element={<HowItWorks />} />
+            <Route path="/download" element={<Download />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/support" element={<Support />} />
+            <Route path="/partner-program" element={<PartnerProgram />} />
+            <Route path="/api-docs" element={<ApiDocs />} />
+            <Route path="/account-deletion" element={<AccountDeletionRequest />} />
+            <Route path="/reporting" element={<ReportingPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          </Routes>
+        </Suspense>
+      </Router>
+    </ThemeProvider>
   );
 }
 

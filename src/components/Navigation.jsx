@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
+import Logo from "../ChatGPT Image Aug 28, 2025, 08_56_54 PM.png";
+import ThemeToggle from "./ThemeToggle";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,7 +28,8 @@ const Navigation = () => {
     <nav className={`nav ${isScrolled ? "scrolled" : ""}`}>
       <div className="nav-container">
         <Link to="/" className="nav-logo">
-          Chatify
+          <img src={Logo} alt="Chatify logo" style={{ height: 28, width: 28, marginRight: 8 }} />
+          <span>Chatify</span>
         </Link>
 
         <div className="nav-links">
@@ -87,6 +90,7 @@ const Navigation = () => {
           <Link to="/privacy-policy" className={`nav-link ${isActive("/privacy-policy") ? "active" : ""}`}>
             Privacy Policy
           </Link>
+          <ThemeToggle />
         </div>
 
         <button
@@ -126,6 +130,9 @@ const Navigation = () => {
           <Link to="/privacy-policy" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
             Privacy Policy
           </Link>
+          <div className="mobile-theme-toggle">
+            <ThemeToggle />
+          </div>
         </div>
       )}
     </nav>

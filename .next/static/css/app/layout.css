@@ -599,6 +599,37 @@ video {
     --app-warm: 45 100% 71%; /* #FFD166 - App's warm yellow */
     --app-success: 142 76% 36%; /* #27AE60 - Success green */
   }
+
+  .dark {
+    --background: 270 50% 8%; /* Rich dark purple background */
+    --foreground: 0 0% 98%;
+    --card: 270 45% 12%; /* Slightly lighter purple for cards */
+    --card-foreground: 0 0% 98%;
+    --popover: 270 45% 12%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 262.1 83.3% 57.8%; /* Keep the same purple primary */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 270 40% 16%; /* Purple secondary */
+    --secondary-foreground: 0 0% 98%;
+    --muted: 270 40% 16%;
+    --muted-foreground: 270 10% 70%;
+    --accent: 270 40% 16%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 270 35% 20%; /* Purple border */
+    --input: 270 45% 12%;
+    --ring: 262.1 83.3% 57.8%;
+    
+    /* Dark theme gradient */
+    --hero-gradient: linear-gradient(135deg, hsl(270, 60%, 15%) 0%, hsl(280, 55%, 20%) 50%, hsl(290, 50%, 25%) 100%);
+    
+    /* Dark theme app-inspired accent colors */
+    --app-accent: 0 100% 71%; /* Keep the same peach pink */
+    --app-secondary: 207 70% 63%; /* Keep the same sky blue */
+    --app-warm: 45 100% 71%; /* Keep the same warm yellow */
+    --app-success: 142 76% 36%; /* Keep the same success green */
+  }
   * {
   border-color: hsl(var(--border));
 }
@@ -606,6 +637,43 @@ video {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
 }
+  
+  /* Dark theme gradient backgrounds */
+  .dark body {
+    background: linear-gradient(135deg, hsl(270, 50%, 8%) 0%, hsl(280, 45%, 12%) 50%, hsl(290, 40%, 16%) 100%);
+    background-attachment: fixed;
+  }
+  
+  .dark .nav {
+    background: linear-gradient(135deg, rgba(270, 50%, 8%, 0.95) 0%, rgba(280, 45%, 12%, 0.95) 100%);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+  }
+  
+  .dark .feature-card {
+    background: linear-gradient(135deg, hsl(270, 45%, 12%) 0%, hsl(280, 40%, 16%) 100%);
+    border: 1px solid hsl(270, 35%, 20%);
+  }
+  
+  .dark .hero {
+    background: linear-gradient(135deg, hsl(270, 50%, 8%) 0%, hsl(280, 45%, 12%) 50%, hsl(290, 40%, 16%) 100%);
+  }
+  
+  .dark .features {
+    background: linear-gradient(135deg, hsl(270, 45%, 12%) 0%, hsl(280, 40%, 16%) 100%);
+  }
+  
+  .dark .newsletter {
+    background: linear-gradient(135deg, hsl(270, 45%, 12%) 0%, hsl(280, 40%, 16%) 100%);
+  }
+  
+  .dark .cta {
+    background: linear-gradient(135deg, hsl(270, 50%, 8%) 0%, hsl(280, 45%, 12%) 100%);
+  }
+  
+  .dark .footer {
+    background: linear-gradient(135deg, hsl(270, 50%, 6%) 0%, hsl(280, 45%, 10%) 100%);
+  }
 .container {
   width: 100%;
   margin-right: auto;
@@ -635,8 +703,7 @@ video {
   border-radius: 0.75rem;
   border-width: 1px;
   border-color: hsl(var(--border));
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 189 246 / var(--tw-bg-opacity, 1));
+  background-color: hsl(var(--card));
   padding: 1.5rem;
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
@@ -1165,6 +1232,9 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1));
 }
+.bg-muted {
+  background-color: hsl(var(--muted));
+}
 .bg-muted\/30 {
   background-color: hsl(var(--muted) / 0.3);
 }
@@ -1269,6 +1339,10 @@ video {
   -webkit-background-clip: text;
           background-clip: text;
 }
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
 .p-2 {
   padding: 0.5rem;
 }
@@ -1328,6 +1402,9 @@ video {
 }
 .pt-16 {
   padding-top: 4rem;
+}
+.pt-4 {
+  padding-top: 1rem;
 }
 .pt-8 {
   padding-top: 2rem;
@@ -1401,6 +1478,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(255 209 102 / var(--tw-text-opacity, 1));
 }
+.text-blue-600 {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity, 1));
+}
 .text-gray-400 {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity, 1));
@@ -1459,6 +1540,10 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+.text-yellow-500 {
+  --tw-text-opacity: 1;
+  color: rgb(234 179 8 / var(--tw-text-opacity, 1));
 }
 .opacity-40 {
   opacity: 0.4;
@@ -1538,76 +1623,63 @@ video {
       transform: translateY(-20px);
     }
   }
-
 .hover\:bg-gray-800:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
 }
-
 .hover\:bg-muted:hover {
   background-color: hsl(var(--muted));
 }
-
 .hover\:bg-muted\/50:hover {
   background-color: hsl(var(--muted) / 0.5);
 }
-
+.hover\:bg-muted\/80:hover {
+  background-color: hsl(var(--muted) / 0.8);
+}
 .hover\:bg-primary\/90:hover {
   background-color: hsl(var(--primary) / 0.9);
 }
-
 .hover\:bg-secondary\/80:hover {
   background-color: hsl(var(--secondary) / 0.8);
 }
-
 .hover\:text-foreground:hover {
   color: hsl(var(--foreground));
 }
-
 .hover\:text-primary:hover {
   color: hsl(var(--primary));
 }
-
 .hover\:underline:hover {
   text-decoration-line: underline;
 }
-
 .hover\:shadow-lg:hover {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
-
 .focus\:ring-2:focus {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
-
 .focus\:ring-primary:focus {
   --tw-ring-color: hsl(var(--primary));
 }
-
 .disabled\:cursor-not-allowed:disabled {
   cursor: not-allowed;
 }
-
 .disabled\:opacity-50:disabled {
   opacity: 0.5;
 }
-
 @media (min-width: 640px) {
 
   .sm\:flex-row {
     flex-direction: row;
   }
 }
-
 @media (min-width: 768px) {
 
   .md\:flex {
@@ -1634,7 +1706,6 @@ video {
     flex-direction: row;
   }
 }
-
 @media (min-width: 1024px) {
 
   .lg\:col-span-1 {
