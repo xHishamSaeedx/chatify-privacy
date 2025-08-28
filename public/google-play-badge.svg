@@ -1,0 +1,10 @@
+<svg width="135" height="40" viewBox="0 0 135 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="135" height="40" rx="6" fill="black"/>
+  <!-- Google Play Triangle -->
+  <path d="M15 8L25 20L15 32L15 8Z" fill="#00DC82"/>
+  <path d="M15 8L25 20L15 32L15 8Z" fill="#00DC82"/>
+  <!-- Play Button Triangle -->
+  <path d="M18 12L22 16L18 20L18 12Z" fill="white"/>
+  <text x="35" y="16" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">Get it on</text>
+  <text x="35" y="28" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Google Play</text>
+</svg>

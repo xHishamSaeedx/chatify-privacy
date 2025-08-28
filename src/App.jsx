@@ -1,29 +1,30 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import "./App.css";
-import chatifyLogo from "/chatify_logo2.png";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Suspense, lazy, useEffect } from "react";
+import "./index.css";
+import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
+import { trackPageView } from "./utils/analytics";
+
+// Import existing pages (non-lazy critical routes)
 import AccountDeletionRequest from "./AccountDeletionRequest";
 import ReportingPage from "./ReportingPage";
 
+// Lazy-load heavier content routes
+const Home = lazy(() => import("./pages/Home"));
+const Features = lazy(() => import("./pages/Features"));
+const HowItWorks = lazy(() => import("./pages/HowItWorks"));
+const Download = lazy(() => import("./pages/Download"));
+const About = lazy(() => import("./pages/About"));
+const Support = lazy(() => import("./pages/Support"));
+const PartnerProgram = lazy(() => import("./pages/PartnerProgram"));
+const ApiDocs = lazy(() => import("./pages/ApiDocs"));
+
+// Privacy Policy component (existing)
 function PrivacyPolicy() {
   return (
     <div className="privacy-container">
-      <header className="privacy-header">
-        <img src={chatifyLogo} alt="Chatify Logo" className="chatify-logo" />
-        <h1>Privacy Policy</h1>
-        <p className="app-subtitle">Chatify - Your Privacy Matters</p>
-        <nav className="privacy-nav">
-          <Link to="/" className="nav-link active">
-            Privacy Policy
-          </Link>
-          <Link to="/account-deletion" className="nav-link">
-            Request Account Deletion
-          </Link>
-          <Link to="/reporting" className="nav-link">
-            Reporting System
-          </Link>
-        </nav>
-      </header>
-
+      <Navigation />
+      
       <main className="privacy-content">
         <section className="policy-section">
           <p className="intro-text">
@@ -147,9 +148,9 @@ function PrivacyPolicy() {
           </ul>
           <p>
             To request any of these, please use our{" "}
-            <Link to="/account-deletion" className="inline-link">
+            <a href="/account-deletion" className="inline-link">
               Account Deletion Request form
-            </Link>
+            </a>
             .
           </p>
         </section>
@@ -164,22 +165,41 @@ function PrivacyPolicy() {
         </section>
       </main>
 
-      <footer className="privacy-footer">
-        <p>&copy; 2024 Chatify. All rights reserved.</p>
-        <p>Last updated: {new Date().toLocaleDateString()}</p>
-      </footer>
+      <Footer />
     </div>
   );
 }
 
 function App() {
+  // Basic page view analytics (pluggable)
+  useEffect(() => {
+    const onRoute = () => {
+      const pagePath = window.location.pathname + window.location.search;
+      const pageTitle = document.title || 'Chatify Privacy';
+      trackPageView(pagePath, pageTitle);
+    };
+    onRoute();
+    window.addEventListener("popstate", onRoute);
+    return () => window.removeEventListener("popstate", onRoute);
+  }, []);
+
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<PrivacyPolicy />} />
-        <Route path="/account-deletion" element={<AccountDeletionRequest />} />
-        <Route path="/reporting" element={<ReportingPage />} />
-      </Routes>
+      <Suspense fallback={<div className="page-loading" role="status" aria-live="polite">Loading…</div>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/features" element={<Features />} />
+          <Route path="/how-it-works" element={<HowItWorks />} />
+          <Route path="/download" element={<Download />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/support" element={<Support />} />
+          <Route path="/partner-program" element={<PartnerProgram />} />
+          <Route path="/api-docs" element={<ApiDocs />} />
+          <Route path="/account-deletion" element={<AccountDeletionRequest />} />
+          <Route path="/reporting" element={<ReportingPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        </Routes>
+      </Suspense>
     </Router>
   );
 }

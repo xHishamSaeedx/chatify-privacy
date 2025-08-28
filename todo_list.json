@@ -1,0 +1,22 @@
+[
+  {"id":"todo_a11y_updates","content":"Implement accessibility updates: skip link, ARIA roles, keyboard nav","status":"completed"},
+  {"id":"todo_code_splitting","content":"Enable route-based code splitting with React.lazy and Suspense","status":"completed"},
+  {"id":"todo_analytics","content":"Add basic analytics abstraction and page view tracking","status":"completed"},
+  {"id":"todo_support_enhance","content":"Enhance Support page: contact form and chat widget scaffold","status":"completed"},
+  {"id":"todo_download_tracking","content":"Add download tracking hooks and progress indicators","status":"completed"},
+  {"id":"todo_feedback_forms","content":"Add user feedback forms site-wide","status":"completed"},
+  {"id":"todo_print_friendly","content":"Add print-friendly styles for key pages","status":"completed"},
+  {"id":"todo_newsletter_social","content":"Implement newsletter signup and social links","status":"in_progress"},
+  {"id":"todo_business_pages","content":"Add business pages: partner program and API docs (skeletons)","status":"pending"},
+  {"id":"todo_community_pages","content":"Add community skeletons: forum and blog","status":"pending"},
+  {"id":"todo_analytics_fix","content":"Fix analytics module context binding issue","status":"completed"},
+  {"id":"todo_newsletter_integration","content":"Integrate Newsletter component into Home page","status":"completed"},
+  {"id":"todo_feedback_integration","content":"Integrate FeedbackForm component into Support page","status":"completed"},
+  {"id":"todo_social_links","content":"Add social media links to Footer component","status":"completed"},
+  {"id":"todo_business_skeleton","content":"Create skeleton pages for Partner Program and API Documentation","status":"completed"},
+  {"id":"todo_community_skeleton","content":"Create skeleton pages for Community Forum and Blog","status":"pending"},
+  {"id":"todo_performance_optimization","content":"Implement caching strategies and CDN integration","status":"pending"},
+  {"id":"todo_advanced_analytics","content":"Add user journey analysis and feature usage statistics","status":"pending"},
+  {"id":"todo_language_selector","content":"Add language selector for international users","status":"pending"},
+  {"id":"todo_error_boundaries","content":"Add error boundaries for better error handling","status":"pending"}
+]

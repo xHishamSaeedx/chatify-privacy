@@ -1,0 +1,336 @@
+/* Print Styles */
+@media print {
+  /* Reset and base print styles */
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Hide non-essential elements */
+  .main-navigation,
+  .footer,
+  .mobile-menu-button,
+  .nav-search,
+  .search-bar,
+  .feedback-form-overlay,
+  .chat-widget,
+  .contact-form-section,
+  .newsletter-container,
+  .cta-section,
+  .download-button,
+  .subscribe-button,
+  .feedback-button,
+  .action-card,
+  .contact-card,
+  .community-card,
+  .qr-section,
+  .platform-detection,
+  .loading-spinner,
+  .skip-link {
+    display: none !important;
+  }
+
+  /* Typography adjustments */
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: black !important;
+    background: white !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    color: black !important;
+  }
+
+  h1 { font-size: 18pt; }
+  h2 { font-size: 16pt; }
+  h3 { font-size: 14pt; }
+  h4 { font-size: 12pt; }
+
+  /* Links */
+  a {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #666 !important;
+  }
+
+  /* Page breaks */
+  .page-break {
+    page-break-before: always;
+  }
+
+  .no-break {
+    page-break-inside: avoid;
+  }
+
+  /* Container adjustments */
+  .container {
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Section adjustments */
+  section {
+    page-break-inside: avoid;
+    margin-bottom: 20pt;
+  }
+
+  /* Hero sections */
+  .hero-section,
+  .support-hero,
+  .download-hero,
+  .about-hero,
+  .features-hero,
+  .how-it-works-hero {
+    background: white !important;
+    color: black !important;
+    padding: 20pt 0 !important;
+    text-align: left !important;
+  }
+
+  .hero-content h1,
+  .support-hero .hero-content h1,
+  .download-hero .hero-content h1,
+  .about-hero .hero-content h1,
+  .features-hero .hero-content h1,
+  .how-it-works-hero .hero-content h1 {
+    color: black !important;
+    font-size: 18pt !important;
+    margin-bottom: 10pt !important;
+  }
+
+  .hero-content p,
+  .support-hero .hero-content p,
+  .download-hero .hero-content p,
+  .about-hero .hero-content p,
+  .features-hero .hero-content p,
+  .how-it-works-hero .hero-content p {
+    color: black !important;
+    font-size: 12pt !important;
+  }
+
+  /* Card and grid layouts */
+  .features-grid,
+  .actions-grid,
+  .contact-grid,
+  .faq-items,
+  .platform-grid,
+  .requirements-grid,
+  .faq-grid {
+    display: block !important;
+  }
+
+  .feature-card,
+  .action-card,
+  .contact-card,
+  .faq-item,
+  .platform-card,
+  .requirements-card {
+    display: block !important;
+    border: 1px solid #ccc !important;
+    margin-bottom: 15pt !important;
+    padding: 15pt !important;
+    page-break-inside: avoid;
+  }
+
+  /* Lists */
+  ul, ol {
+    margin-left: 20pt !important;
+  }
+
+  li {
+    margin-bottom: 5pt !important;
+  }
+
+  /* Tables */
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+  }
+
+  th, td {
+    border: 1px solid #ccc !important;
+    padding: 8pt !important;
+    text-align: left !important;
+  }
+
+  /* Privacy Policy specific */
+  .privacy-container {
+    padding: 0 !important;
+  }
+
+  .privacy-content {
+    padding: 0 !important;
+  }
+
+  .policy-section {
+    margin-bottom: 20pt !important;
+    page-break-inside: avoid;
+  }
+
+  .policy-section h2 {
+    border-bottom: 1px solid #ccc !important;
+    padding-bottom: 5pt !important;
+    margin-bottom: 10pt !important;
+  }
+
+  .policy-section h3 {
+    margin-top: 15pt !important;
+    margin-bottom: 8pt !important;
+  }
+
+  /* FAQ sections */
+  .faq-categories {
+    display: none !important;
+  }
+
+  .faq-item {
+    border-left: 3px solid #ccc !important;
+    padding-left: 15pt !important;
+  }
+
+  .faq-item h3 {
+    margin-bottom: 8pt !important;
+  }
+
+  /* Support page specific */
+  .support-page {
+    padding: 0 !important;
+  }
+
+  .quick-actions,
+  .contact-methods,
+  .community-section,
+  .feedback-section {
+    background: white !important;
+    color: black !important;
+    padding: 20pt 0 !important;
+  }
+
+  /* Download page specific */
+  .download-page {
+    padding: 0 !important;
+  }
+
+  .download-options,
+  .download-features,
+  .system-requirements,
+  .download-faq {
+    background: white !important;
+    color: black !important;
+    padding: 20pt 0 !important;
+  }
+
+  /* About page specific */
+  .about-page {
+    padding: 0 !important;
+  }
+
+  .about-content,
+  .team-section,
+  .mission-section,
+  .values-section {
+    background: white !important;
+    color: black !important;
+    padding: 20pt 0 !important;
+  }
+
+  /* Features page specific */
+  .features-page {
+    padding: 0 !important;
+  }
+
+  .features-content,
+  .comparison-section,
+  .security-section {
+    background: white !important;
+    color: black !important;
+    padding: 20pt 0 !important;
+  }
+
+  /* How It Works page specific */
+  .how-it-works-page {
+    padding: 0 !important;
+  }
+
+  .how-it-works-content,
+  .process-section,
+  .architecture-section {
+    background: white !important;
+    color: black !important;
+    padding: 20pt 0 !important;
+  }
+
+  /* Icons and decorative elements */
+  .feature-icon,
+  .action-icon,
+  .contact-icon,
+  .community-icon,
+  .platform-icon {
+    display: none !important;
+  }
+
+  /* Gradients and backgrounds */
+  .gradient-bg,
+  [class*="gradient"] {
+    background: white !important;
+  }
+
+  /* Shadows and effects */
+  [class*="shadow"],
+  [class*="blur"] {
+    box-shadow: none !important;
+    filter: none !important;
+  }
+
+  /* Page margins */
+  @page {
+    margin: 1in;
+  }
+
+  /* Header and footer for printed pages */
+  @page :first {
+    @top-center {
+      content: "Chatify Privacy Website";
+      font-size: 10pt;
+      color: #666;
+    }
+  }
+
+  @page :left {
+    @bottom-left {
+      content: "Chatify Privacy";
+      font-size: 10pt;
+      color: #666;
+    }
+    @bottom-right {
+      content: counter(page);
+      font-size: 10pt;
+      color: #666;
+    }
+  }
+
+  @page :right {
+    @bottom-left {
+      content: counter(page);
+      font-size: 10pt;
+      color: #666;
+    }
+    @bottom-right {
+      content: "chatify.com";
+      font-size: 10pt;
+      color: #666;
+    }
+  }
+}

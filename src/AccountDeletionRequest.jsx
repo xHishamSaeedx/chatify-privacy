@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "./firebase";
-import { Link } from "react-router-dom";
-import chatifyLogo from "/chatify_logo2.png";
+import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
 import "./AccountDeletionRequest.css";
 
 function AccountDeletionRequest() {
@@ -53,23 +53,8 @@ function AccountDeletionRequest() {
 
   return (
     <div className="deletion-request-container">
-      <header className="deletion-request-header">
-        <img src={chatifyLogo} alt="Chatify Logo" className="chatify-logo" />
-        <h1>Account Deletion Request</h1>
-        <p className="app-subtitle">Chatify - Your Privacy Matters</p>
-        <nav className="privacy-nav">
-          <Link to="/" className="nav-link">
-            Privacy Policy
-          </Link>
-          <Link to="/account-deletion" className="nav-link active">
-            Request Account Deletion
-          </Link>
-          <Link to="/reporting" className="nav-link">
-            Reporting System
-          </Link>
-        </nav>
-      </header>
-
+      <Navigation />
+      
       <main className="deletion-request-content">
         <div className="request-form-container">
           <h2>Request Account Deletion</h2>
@@ -114,7 +99,7 @@ function AccountDeletionRequest() {
             </div>
 
             <div className="form-group">
-              <label htmlFor="username">Username *</label>
+              <label htmlFor="username">Chatify Username *</label>
               <input
                 type="text"
                 id="username"
@@ -148,46 +133,52 @@ function AccountDeletionRequest() {
                 onChange={handleInputChange}
                 placeholder="Please let us know why you're requesting account deletion (optional)"
                 rows="4"
-              />
+              ></textarea>
             </div>
 
-            <div className="form-group checkbox-group">
+            <div className="form-group">
               <label className="checkbox-label">
                 <input type="checkbox" required />
-                <span className="checkmark"></span>I understand that this action
-                will permanently delete my account and all associated data.
+                <span className="checkmark"></span>
+                I understand that this action is irreversible and all my data
+                will be permanently deleted.
               </label>
             </div>
 
             <button
               type="submit"
-              className="submit-button"
               disabled={isSubmitting}
+              className="submit-button"
             >
-              {isSubmitting ? "Submitting..." : "Request Account Deletion"}
+              {isSubmitting ? "Submitting..." : "Submit Deletion Request"}
             </button>
           </form>
 
-          <div className="privacy-note">
+          <div className="additional-info">
             <h3>What happens next?</h3>
             <ul>
-              <li>Your request will be reviewed within 30 days</li>
-              <li>We will contact you at the provided email address</li>
               <li>
-                All your data will be permanently deleted from our systems
+                <strong>Confirmation:</strong> You'll receive an email
+                confirmation of your request.
               </li>
               <li>
-                You will receive confirmation once the deletion is complete
+                <strong>Processing:</strong> We'll process your request within 30
+                days as required by privacy regulations.
+              </li>
+              <li>
+                <strong>Deletion:</strong> All your data will be permanently
+                deleted from our systems.
+              </li>
+              <li>
+                <strong>Notification:</strong> You'll receive a final
+                confirmation when the deletion is complete.
               </li>
             </ul>
           </div>
         </div>
       </main>
 
-      <footer className="deletion-request-footer">
-        <p>&copy; 2024 Chatify. All rights reserved.</p>
-        <p>Last updated: {new Date().toLocaleDateString()}</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

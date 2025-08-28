@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 280 100% 95%; /* #d2a6f9 - Light purple background */
+    --foreground: 222.2 84% 4.9%;
+    --card: 280 100% 97%; /* #dcbdf6 - Lighter purple for cards */
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 280 100% 97%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 280 100% 92%; /* Slightly darker purple for secondary */
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 280 100% 90%; /* Muted purple */
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 280 100% 92%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 280 100% 85%; /* Purple border */
+    --input: 280 100% 97%;
+    --ring: 262.1 83.3% 57.8%;
+    --radius: 0.5rem;
+    
+    /* App-inspired accent colors */
+    --app-accent: 0 100% 71%; /* #FF7F8A - App's peach pink */
+    --app-secondary: 207 70% 63%; /* #5DADE2 - App's sky blue */
+    --app-warm: 45 100% 71%; /* #FFD166 - App's warm yellow */
+    --app-success: 142 76% 36%; /* #27AE60 - Success green */
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 262.1 83.3% 57.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-purple-600 to-purple-500 bg-clip-text text-transparent;
+  }
+  
+  .hero-gradient {
+    @apply bg-gradient-to-br from-primary/10 via-background to-muted/20;
+  }
+  
+  .feature-card {
+    @apply bg-[#dcbdf6] border border-border rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-colors hover:bg-primary/90;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium transition-colors hover:bg-secondary/80;
+  }
+  
+  /* App-inspired button styles */
+  .btn-app-primary {
+    @apply bg-[#FF7F8A] text-white px-6 py-3 rounded-lg font-medium transition-colors hover:bg-[#FF7F8A]/90;
+  }
+  
+  .btn-app-secondary {
+    @apply bg-[#5DADE2] text-white px-6 py-3 rounded-lg font-medium transition-colors hover:bg-[#5DADE2]/90;
+  }
+  
+  .btn-app-warm {
+    @apply bg-[#FFD166] text-[#2C2C2C] px-6 py-3 rounded-lg font-medium transition-colors hover:bg-[#FFD166]/90;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+}
