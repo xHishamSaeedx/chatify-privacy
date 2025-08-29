@@ -34,7 +34,7 @@ const Download = () => {
     },
     android: {
       store: "Google Play",
-      url: "https://play.google.com/store/apps/details?id=com.chatify.app",
+      url: "https://play.google.com/store/apps/details?id=com.company.blabinn&pcampaignid=web_share",
       icon: "🤖",
       color: "#01875F"
     }

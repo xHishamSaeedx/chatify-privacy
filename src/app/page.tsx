@@ -214,7 +214,7 @@ const Home = () => {
                 <img src="/app-store-badge.svg" alt="Download on the App Store" className="h-12 w-auto" />
               </motion.a>
               <motion.a
-                href="#"
+                href="https://play.google.com/store/apps/details?id=com.company.blabinn&pcampaignid=web_share"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 aria-label="Get it on Google Play"
