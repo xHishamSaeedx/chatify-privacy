@@ -68,9 +68,9 @@ export default function FeaturesPage() {
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      <main className="pt-16 pb-20">
+      <main className="pt-16 pb-12 sm:pb-16 lg:pb-20">
                  {/* Hero Section */}
-         <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-primary/5">
+         <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-primary/5 via-background to-primary/5">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -78,10 +78,10 @@ export default function FeaturesPage() {
               transition={{ duration: 0.8 }}
               className="text-center max-w-4xl mx-auto"
             >
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 gradient-text">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 gradient-text">
                 Powerful Features for Modern Chatting
               </h1>
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 leading-relaxed px-2 sm:px-0">
                 Discover what makes Chatify the ultimate random chat app. From instant global connections 
                 to advanced privacy features, we've built everything you need for meaningful conversations.
               </p>
@@ -100,22 +100,22 @@ export default function FeaturesPage() {
         </section>
 
         {/* Features Grid */}
-        <section className="py-20">
+        <section className="py-12 sm:py-16 lg:py-20">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-center mb-16"
+              className="text-center mb-12 sm:mb-16"
             >
-              <h2 className="text-4xl font-bold mb-6">Why Choose Chatify?</h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">Why Choose Chatify?</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-2 sm:px-0">
                 Every feature is designed with your experience in mind. Simple, powerful, and secure.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
               {features.map((feature, index) => (
                 <motion.div
                   key={feature.title}
@@ -124,31 +124,31 @@ export default function FeaturesPage() {
                   transition={{ delay: index * 0.1, duration: 0.6 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -5 }}
-                  className={`bg-card border border-border rounded-xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 ${
+                  className={`bg-card border border-border rounded-xl p-4 sm:p-6 lg:p-8 shadow-sm hover:shadow-lg transition-all duration-300 ${
                     index === 0 ? 'border-app-accent' : 
                     index === 2 ? 'border-app-secondary' : 
                     index === 4 ? 'border-app-warm' : ''
                   }`}
                 >
-                  <div className={`w-16 h-16 rounded-xl flex items-center justify-center mb-6 ${
+                  <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-xl flex items-center justify-center mb-4 sm:mb-6 ${
                     index === 0 ? 'bg-[#FF7F8A]/10' : 
                     index === 2 ? 'bg-[#5DADE2]/10' : 
                     index === 4 ? 'bg-[#FFD166]/10' : 'bg-primary/10'
                   }`}>
-                    <feature.icon className={`h-8 w-8 ${
+                    <feature.icon className={`h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8 ${
                       index === 0 ? 'text-[#FF7F8A]' : 
                       index === 2 ? 'text-[#5DADE2]' : 
                       index === 4 ? 'text-[#FFD166]' : 'text-primary'
                     }`} />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4">{feature.title}</h3>
+                  <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 leading-relaxed">
                     {feature.description}
                   </p>
-                  <ul className="space-y-2">
+                  <ul className="space-y-1 sm:space-y-2">
                     {feature.benefits.map((benefit) => (
-                      <li key={benefit} className="flex items-center gap-2 text-sm">
-                        <CheckCircle className="h-4 w-4 text-primary" />
+                      <li key={benefit} className="flex items-center gap-2 text-xs sm:text-sm">
+                        <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 text-primary" />
                         <span>{benefit}</span>
                       </li>
                     ))}
@@ -160,9 +160,9 @@ export default function FeaturesPage() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-20 bg-muted/30">
+        <section className="py-12 sm:py-16 lg:py-20 bg-muted/30">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
@@ -172,8 +172,8 @@ export default function FeaturesPage() {
                   viewport={{ once: true }}
                   className="text-center"
                 >
-                  <div className="text-4xl lg:text-5xl font-bold text-primary mb-2">{stat.number}</div>
-                  <div className="text-muted-foreground">{stat.label}</div>
+                  <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-1 sm:mb-2">{stat.number}</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -181,7 +181,7 @@ export default function FeaturesPage() {
         </section>
 
                  {/* CTA Section */}
-         <section className="py-20 bg-gradient-to-r from-primary/10 via-[#FF7F8A]/5 to-[#5DADE2]/5">
+         <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-primary/10 via-[#FF7F8A]/5 to-[#5DADE2]/5">
           <div className="container mx-auto px-4 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -189,8 +189,8 @@ export default function FeaturesPage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6">Ready to Experience Chatify?</h2>
-              <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">Ready to Experience Chatify?</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto px-2 sm:px-0">
                 Join millions of users who are already enjoying the best random chat experience.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
