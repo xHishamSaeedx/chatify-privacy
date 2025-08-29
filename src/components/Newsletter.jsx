@@ -50,7 +50,7 @@ const Newsletter = ({
         setSubmitStatus(null);
       }, 3000);
       
-    } catch (error) {
+    } catch {
       trackFormSubmission('newsletter_subscription', false);
       setSubmitStatus('error');
       setErrorMessage('Something went wrong. Please try again.');

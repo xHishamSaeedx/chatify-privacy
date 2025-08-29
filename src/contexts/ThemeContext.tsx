@@ -24,20 +24,23 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Check localStorage for saved theme preference
-    const savedTheme = localStorage.getItem('chatify-theme') as Theme;
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else {
-      // Check system preference
-      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      setTheme(systemTheme);
+    // Only access localStorage and window after component mounts
+    if (typeof window !== 'undefined') {
+      // Check localStorage for saved theme preference
+      const savedTheme = localStorage.getItem('chatify-theme') as Theme;
+      if (savedTheme) {
+        setTheme(savedTheme);
+      } else {
+        // Check system preference
+        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        setTheme(systemTheme);
+      }
     }
     setMounted(true);
   }, []);
 
   useEffect(() => {
-    if (mounted) {
+    if (mounted && typeof window !== 'undefined') {
       // Save theme preference to localStorage
       localStorage.setItem('chatify-theme', theme);
       

@@ -67,7 +67,7 @@ const FeedbackForm = ({
         if (onClose) onClose();
       }, 2000);
       
-    } catch (error) {
+    } catch {
       trackFormSubmission(formType, false);
       setSubmitStatus('error');
     } finally {

@@ -3,7 +3,7 @@
 
 class Analytics {
   constructor() {
-    this.isEnabled = process.env.NODE_ENV === 'production';
+    this.isEnabled = false; // Disable analytics for now to avoid build issues
     this.events = [];
     
     // Bind methods to maintain context
@@ -22,16 +22,16 @@ class Analytics {
     }
 
     // Example: Google Analytics 4
-    if (typeof gtag !== 'undefined') {
-      gtag('config', 'GA_MEASUREMENT_ID', {
+    if (typeof window !== 'undefined' && typeof window.gtag !== 'undefined') {
+      window.gtag('config', 'GA_MEASUREMENT_ID', {
         page_path: pagePath,
         page_title: pageTitle
       });
     }
 
     // Example: Mixpanel
-    if (typeof mixpanel !== 'undefined') {
-      mixpanel.track('Page View', {
+    if (typeof window !== 'undefined' && typeof window.mixpanel !== 'undefined') {
+      window.mixpanel.track('Page View', {
         page: pagePath,
         title: pageTitle
       });
@@ -53,13 +53,13 @@ class Analytics {
     }
 
     // Example: Google Analytics 4
-    if (typeof gtag !== 'undefined') {
-      gtag('event', eventName, properties);
+    if (typeof window !== 'undefined' && typeof window.gtag !== 'undefined') {
+      window.gtag('event', eventName, properties);
     }
 
     // Example: Mixpanel
-    if (typeof mixpanel !== 'undefined') {
-      mixpanel.track(eventName, properties);
+    if (typeof window !== 'undefined' && typeof window.mixpanel !== 'undefined') {
+      window.mixpanel.track(eventName, properties);
     }
 
     // Store locally for debugging
