@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
   images: {
     domains: ["localhost"],
   },
+  // Disable devtools in development to reduce errors
+  devIndicators: {
+    buildActivity: false,
+  },
 };
 
 export default nextConfig;
