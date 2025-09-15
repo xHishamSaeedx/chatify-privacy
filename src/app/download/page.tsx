@@ -84,7 +84,7 @@ export default function DownloadPage() {
                 </motion.a>
 
                 <motion.a
-                  href="https://play.google.com/store/apps/details?id=com.company.blabinn&pcampaignid=web_share"
+                  href="https://play.google.com/store/apps/details?id=com.company.chatify&pcampaignid=web_share"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="flex items-center gap-3 btn-app-secondary px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-medium w-full sm:w-auto"
@@ -235,7 +235,7 @@ export default function DownloadPage() {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <motion.a
-                  href="https://play.google.com/store/apps/details?id=com.company.blabinn&pcampaignid=web_share"
+                  href="https://play.google.com/store/apps/details?id=com.company.chatify&pcampaignid=web_share"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="flex items-center gap-3 bg-black text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-medium hover:bg-gray-800 transition-colors w-full sm:w-auto"

@@ -177,7 +177,7 @@ const Home = () => {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-6 sm:mb-8 leading-relaxed px-2 sm:px-0"
             >
-              Blabinn is the ultimate random chat app that connects you with people worldwide. 
+              Chatify is the ultimate random chat app that connects you with people worldwide. 
               Start conversations, make new friends, and discover different cultures instantly.
             </motion.p>
             
@@ -214,7 +214,7 @@ const Home = () => {
                 <img src="/app-store-badge.svg" alt="Download on the App Store" className="h-10 sm:h-12 w-auto" />
               </motion.a>
               <motion.a
-                href="https://play.google.com/store/apps/details?id=com.company.blabinn&pcampaignid=web_share"
+                href="https://play.google.com/store/apps/details?id=com.company.chatify&pcampaignid=web_share"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 aria-label="Get it on Google Play"
@@ -236,7 +236,7 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-12 sm:mb-16"
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 gradient-text">Why Choose Blabinn?</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 gradient-text">Why Choose Chatify?</h2>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-2 sm:px-0">
               Experience the best random chat app with amazing features designed for modern communication.
             </p>
@@ -294,7 +294,7 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Stay Updated with Blabinn</h3>
+            <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Stay Updated with Chatify</h3>
             <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto px-2 sm:px-0">
               Get the latest features, updates, and tips for the best chat experience.
             </p>
