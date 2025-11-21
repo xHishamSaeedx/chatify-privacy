@@ -30,6 +30,7 @@ const Footer = () => {
       { href: "/privacy-policy", label: "Privacy Policy" },
       { href: "/terms", label: "Terms of Service" },
       { href: "/cookies", label: "Cookie Policy" },
+      { href: "/revenue-model", label: "Revenue Model" },
     ],
   };
 
@@ -42,8 +43,8 @@ const Footer = () => {
 
   return (
     <footer className="border-t border-border/60 bg-gradient-to-r from-primary/5 via-[#FF7F8A]/3 to-[#5DADE2]/5">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Brand */}
           <div className="lg:col-span-1">
             <motion.div
@@ -146,17 +147,17 @@ const Footer = () => {
             © {currentYear} Chatify. All rights reserved.
           </p>
           
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             {socialLinks.map((social) => (
               <motion.a
                 key={social.label}
                 href={social.href}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="p-2 rounded-md border border-border hover:bg-muted/50 transition-colors"
+                className="p-2.5 sm:p-2 rounded-md border border-border hover:bg-muted/50 transition-colors touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center"
                 aria-label={social.label}
               >
-                <social.icon className="h-4 w-4" />
+                <social.icon className="h-4 w-4 sm:h-5 sm:w-5" />
               </motion.a>
             ))}
           </div>

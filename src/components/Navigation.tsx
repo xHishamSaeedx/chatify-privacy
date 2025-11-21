@@ -53,17 +53,18 @@ const Navigation = () => {
           : "bg-transparent"
       )}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2 touch-manipulation">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="w-8 h-8 flex items-center justify-center"
+              whileTap={{ scale: 0.95 }}
+              className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center"
             >
-              <img src="/ChatGPT Image Aug 28, 2025, 08_56_54 PM.png" alt="Chatify logo" className="w-8 h-8 object-contain" />
+              <img src="/ChatGPT Image Aug 28, 2025, 08_56_54 PM.png" alt="Chatify logo" className="w-7 h-7 sm:w-8 sm:h-8 object-contain" />
             </motion.div>
-            <span className="text-xl font-bold gradient-text">Chatify</span>
+            <span className="text-lg sm:text-xl font-bold gradient-text">Chatify</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -88,7 +89,8 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-md hover:bg-muted transition-colors"
+            className="md:hidden p-2 rounded-md hover:bg-muted transition-colors touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center"
+            aria-label="Toggle menu"
           >
             <AnimatePresence mode="wait">
               {isMobileMenuOpen ? (
@@ -123,23 +125,23 @@ const Navigation = () => {
               exit={{ opacity: 0, height: 0 }}
               className="md:hidden border-t border-border bg-background/95 backdrop-blur-md"
             >
-              <div className="py-4 space-y-2">
+              <div className="py-4 space-y-1">
                 {navItems.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={cn(
-                      "block px-4 py-2 text-sm font-medium transition-colors hover:bg-muted rounded-md",
+                      "block px-4 py-3 text-sm font-medium transition-colors hover:bg-muted rounded-md touch-manipulation min-h-[44px] flex items-center",
                       isActive(item.href)
                         ? "text-primary bg-primary/10"
                         : "text-muted-foreground"
                     )}
-                                    >
+                  >
                     {item.label}
                   </Link>
                 ))}
-                <div className="flex justify-center pt-4 border-t border-border">
+                <div className="flex justify-center pt-4 mt-4 border-t border-border">
                   <ThemeToggle />
                 </div>
               </div>

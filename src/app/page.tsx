@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -15,10 +16,12 @@ import {
   Clock,
   CheckCircle,
   Star,
-  Smartphone
+  Smartphone,
+  X
 } from "lucide-react";
 
 const Home = () => {
+  const [showComingSoon, setShowComingSoon] = useState(false);
   const features = [
     {
       icon: Globe,
@@ -93,16 +96,16 @@ const Home = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative pt-16 min-h-[85vh] sm:min-h-[92vh] flex items-center overflow-hidden">
+      <section className="relative pt-16 min-h-[80vh] sm:min-h-[85vh] lg:min-h-[92vh] flex items-center overflow-hidden">
         {/* Background Gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5" />
-        <div className="pointer-events-none absolute -inset-32 opacity-40 blur-3xl">
-          <div className="absolute left-1/4 top-20 h-72 w-72 rounded-full bg-primary/20 animate-float" />
-          <div className="absolute right-1/4 bottom-10 h-80 w-80 rounded-full bg-[#FF7F8A]/10 animate-float" style={{animationDelay:"300ms"}} />
+        <div className="pointer-events-none absolute -inset-32 opacity-20 sm:opacity-40 blur-3xl">
+          <div className="absolute left-1/4 top-20 h-48 w-48 sm:h-72 sm:w-72 rounded-full bg-primary/20 animate-float" />
+          <div className="absolute right-1/4 bottom-10 h-56 w-56 sm:h-80 sm:w-80 rounded-full bg-[#FF7F8A]/10 animate-float" style={{animationDelay:"300ms"}} />
         </div>
 
-        {/* Floating Chat Bubbles */}
-        <div className="absolute inset-0 pointer-events-none">
+        {/* Floating Chat Bubbles - Hidden on very small screens, shown on larger */}
+        <div className="absolute inset-0 pointer-events-none hidden sm:block">
           {chatBubbles.map((bubble, index) => (
             <motion.div
               key={index}
@@ -145,7 +148,7 @@ const Home = () => {
           ))}
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 py-8 sm:py-16 lg:py-24">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 py-8 sm:py-16 lg:py-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -156,7 +159,7 @@ const Home = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="inline-flex items-center px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded-full text-sm font-medium mb-6"
+              className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-primary/10 text-primary border border-primary/20 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6"
             >
               Connect • Chat • Explore
             </motion.div>
@@ -165,7 +168,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-4 sm:mb-6 bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent"
+              className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-3 sm:mb-4 md:mb-6 bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent leading-tight sm:leading-normal"
             >
               Connect with the World
               <span className="block text-primary">One Chat at a Time</span>
@@ -175,7 +178,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-6 sm:mb-8 leading-relaxed px-2 sm:px-0"
+              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-muted-foreground mb-5 sm:mb-6 md:mb-8 leading-relaxed px-2 sm:px-0"
             >
               Chatify is the ultimate random chat app that connects you with people worldwide. 
               Start conversations, make new friends, and discover different cultures instantly.
@@ -186,7 +189,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.45, duration: 0.8 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 mb-6 sm:mb-8 text-xs sm:text-sm text-muted-foreground"
+              className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 md:gap-6 mb-5 sm:mb-6 md:mb-8 text-xs sm:text-sm text-muted-foreground"
             >
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
@@ -203,23 +206,27 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6 sm:mb-8"
+              className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-8"
             >
-              <motion.a
-                href="#"
+              <motion.button
+                onClick={() => setShowComingSoon(true)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 aria-label="Download on the App Store"
+                className="touch-manipulation cursor-pointer bg-transparent border-none p-0"
               >
                 <img src="/app-store-badge.svg" alt="Download on the App Store" className="h-10 sm:h-12 w-auto" />
-              </motion.a>
+              </motion.button>
               <motion.a
-                href="https://play.google.com/store/apps/details?id=com.company.chatify&pcampaignid=web_share"
+                href="https://play.google.com/store/apps/details?id=com.company.blabinn&pcampaignid=web_share"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 aria-label="Get it on Google Play"
+                className="touch-manipulation"
               >
-                <img src="/google-play-badge.svg" alt="Get it on Google Play" className="h-10 sm:h-12 w-auto" />
+                <img src="/google-play-badge.png" alt="Get it on Google Play" className="h-10 sm:h-12 w-auto" />
               </motion.a>
             </motion.div>
           </motion.div>
@@ -285,52 +292,25 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Newsletter Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-muted/30">
-        <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Stay Updated with Chatify</h3>
-            <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto px-2 sm:px-0">
-              Get the latest features, updates, and tips for the best chat experience.
-            </p>
-            <form className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-md mx-auto px-4 sm:px-0">
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="flex-1 px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-              <button type="submit" className="btn-primary">
-                Subscribe
-              </button>
-            </form>
-          </motion.div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-primary/10 via-[#FF7F8A]/5 to-[#5DADE2]/5">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-4 sm:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">Ready to Start Chatting?</h2>
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 px-2 sm:px-0">Join millions of users who are already connecting worldwide</p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/download" className="btn-app-primary flex items-center gap-2">
-                <Download size={20} />
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 sm:mb-4 md:mb-6">Ready to Start Chatting?</h2>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground mb-5 sm:mb-6 md:mb-8 px-2 sm:px-0">Join millions of users who are already connecting worldwide</p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+              <Link href="/download" className="btn-app-primary flex items-center justify-center gap-2 w-full sm:w-auto">
+                <Download size={18} className="sm:w-5 sm:h-5" />
                 Download Now
               </Link>
-              <Link href="/how-it-works" className="btn-app-secondary flex items-center gap-2">
+              <Link href="/how-it-works" className="btn-app-secondary flex items-center justify-center gap-2 w-full sm:w-auto">
                 How It Works
-                <ArrowRight size={20} />
+                <ArrowRight size={18} className="sm:w-5 sm:h-5" />
               </Link>
             </div>
           </motion.div>
@@ -338,6 +318,58 @@ const Home = () => {
       </section>
 
       <Footer />
+
+      {/* Coming Soon Modal */}
+      <AnimatePresence>
+        {showComingSoon && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setShowComingSoon(false)}
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
+            />
+            {/* Modal */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              className="fixed inset-0 z-50 flex items-center justify-center p-4"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="bg-background border border-border rounded-2xl shadow-2xl max-w-md w-full p-6 sm:p-8 relative">
+                <button
+                  onClick={() => setShowComingSoon(false)}
+                  className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label="Close"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+                <div className="text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Smartphone className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-2">Coming Soon</h3>
+                  <p className="text-muted-foreground mb-6">
+                    The App Store version of Chatify is currently in development. 
+                    Stay tuned for updates!
+                  </p>
+                  <motion.button
+                    onClick={() => setShowComingSoon(false)}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="btn-primary w-full sm:w-auto px-6"
+                  >
+                    Got it
+                  </motion.button>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

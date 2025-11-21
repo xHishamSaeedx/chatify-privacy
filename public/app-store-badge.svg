@@ -1,10 +1,16 @@
-<svg width="135" height="40" viewBox="0 0 135 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="135" height="40" rx="6" fill="black"/>
-  <path d="M27.5 12.5C27.5 11.5 26.5 10.5 25.5 10.5C24.5 10.5 23.5 11.5 23.5 12.5C23.5 13.5 24.5 14.5 25.5 14.5C26.5 14.5 27.5 13.5 27.5 12.5Z" fill="white"/>
-  <path d="M25.5 8C23.5 8 22 9.5 22 11.5C22 13.5 23.5 15 25.5 15C27.5 15 29 13.5 29 11.5C29 9.5 27.5 8 25.5 8ZM25.5 13C24.5 13 24 12.5 24 11.5C24 10.5 24.5 10 25.5 10C26.5 10 27 10.5 27 11.5C27 12.5 26.5 13 25.5 13Z" fill="white"/>
-  <path d="M20 16H30V18H20V16Z" fill="white"/>
-  <path d="M20 20H30V22H20V20Z" fill="white"/>
-  <path d="M20 24H28V26H20V24Z" fill="white"/>
-  <text x="35" y="16" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">Download on the</text>
-  <text x="35" y="28" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">App Store</text>
+<svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="40" rx="5.5" fill="#FFFFFF"/>
+  <!-- Apple Logo - Recognizable Apple Shape -->
+  <g transform="translate(7, 3)">
+    <!-- Apple icon (simplified Apple logo path) -->
+    <path d="M12.5 2C12.5 1.1 13.2 0.5 14 0.5C14.3 0.5 14.5 0.6 14.7 0.8C14.9 1 15 1.2 15 1.5C15 1.8 14.9 2 14.7 2.2C14.5 2.4 14.3 2.5 14 2.5C13.2 2.5 12.5 1.9 12.5 2Z" fill="#000000"/>
+    <path d="M14 -0.5C12.3 -0.5 11 0.8 11 2.5C11 3.2 11.3 3.8 11.7 4.2C12.1 4.6 12.7 4.9 13.4 4.9C15.1 4.9 16.4 3.6 16.4 1.9C16.4 1.2 16.1 0.6 15.7 0.2C15.3 -0.2 14.7 -0.5 14 -0.5ZM14 4.4C13.2 4.4 12.5 3.9 12.5 3.1C12.5 2.3 13.2 1.6 14 1.6C14.8 1.6 15.5 2.3 15.5 3.1C15.5 3.9 14.8 4.4 14 4.4Z" fill="#000000"/>
+    <!-- Apple body lines (classic Apple logo representation) -->
+    <rect x="11" y="5.5" width="6" height="0.9" fill="#000000" rx="0.4"/>
+    <rect x="11" y="7.3" width="6" height="0.9" fill="#000000" rx="0.4"/>
+    <rect x="11" y="9.1" width="5.5" height="0.9" fill="#000000" rx="0.4"/>
+  </g>
+  <!-- Text -->
+  <text x="23" y="12.5" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif" font-size="5.8" font-weight="400" fill="#000000" letter-spacing="0.08">Download on the</text>
+  <text x="23" y="22.5" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif" font-size="9.2" font-weight="600" fill="#000000" letter-spacing="0.12">App Store</text>
 </svg>

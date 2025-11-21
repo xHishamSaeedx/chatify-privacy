@@ -1,10 +1,10 @@
-<svg width="135" height="40" viewBox="0 0 135 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="135" height="40" rx="6" fill="black"/>
-  <!-- Google Play Triangle -->
-  <path d="M15 8L25 20L15 32L15 8Z" fill="#00DC82"/>
-  <path d="M15 8L25 20L15 32L15 8Z" fill="#00DC82"/>
-  <!-- Play Button Triangle -->
-  <path d="M18 12L22 16L18 20L18 12Z" fill="white"/>
-  <text x="35" y="16" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">Get it on</text>
-  <text x="35" y="28" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Google Play</text>
+<svg width="135" height="40" viewBox="0 0 135 40" xmlns="http://www.w3.org/2000/svg">
+  <rect width="135" height="40" rx="5.5" fill="#000000"/>
+  <!-- Google Play Triangle Logo -->
+  <path d="M10 7L20 20L10 33V7Z" fill="#00DC82"/>
+  <!-- Play Icon Triangle (black) -->
+  <path d="M13.5 12.5L17 16L13.5 19.5V12.5Z" fill="#000000"/>
+  <!-- Text -->
+  <text x="26" y="12.5" font-family="'Roboto', 'Google Sans', Arial, sans-serif" font-size="5.8" font-weight="400" fill="#FFFFFF" letter-spacing="0.08">Get it on</text>
+  <text x="26" y="22.5" font-family="'Roboto', 'Google Sans', Arial, sans-serif" font-size="9.2" font-weight="500" fill="#FFFFFF" letter-spacing="0.12">Google Play</text>
 </svg>

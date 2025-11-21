@@ -70,6 +70,44 @@
   }
   body {
     @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Mobile-first typography */
+  html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+  
+  @media (max-width: 640px) {
+    html {
+      font-size: 14px;
+    }
+  }
+  
+  /* Smooth scrolling for mobile */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  
+  /* Better mobile scrolling */
+  body {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+  }
+  
+  /* Prevent horizontal scroll on mobile */
+  * {
+    max-width: 100%;
+  }
+  
+  img, video, iframe {
+    max-width: 100%;
+    height: auto;
   }
   
   /* Dark theme gradient backgrounds */
@@ -119,7 +157,7 @@
   }
   
   .feature-card {
-    @apply bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300;
+    @apply bg-card border border-border rounded-xl p-4 sm:p-6 shadow-sm hover:shadow-lg transition-all duration-300;
   }
   
   .btn-primary {
@@ -132,15 +170,27 @@
   
   /* App-inspired button styles */
   .btn-app-primary {
-    @apply bg-[#FF7F8A] text-white px-6 py-3 rounded-lg font-medium transition-colors hover:bg-[#FF7F8A]/90;
+    @apply bg-[#FF7F8A] text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium transition-colors hover:bg-[#FF7F8A]/90 active:bg-[#FF7F8A]/80 min-h-[44px] touch-manipulation;
   }
   
   .btn-app-secondary {
-    @apply bg-[#5DADE2] text-white px-6 py-3 rounded-lg font-medium transition-colors hover:bg-[#5DADE2]/90;
+    @apply bg-[#5DADE2] text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium transition-colors hover:bg-[#5DADE2]/90 active:bg-[#5DADE2]/80 min-h-[44px] touch-manipulation;
   }
   
   .btn-app-warm {
-    @apply bg-[#FFD166] text-[#2C2C2C] px-6 py-3 rounded-lg font-medium transition-colors hover:bg-[#FFD166]/90;
+    @apply bg-[#FFD166] text-[#2C2C2C] px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium transition-colors hover:bg-[#FFD166]/90 active:bg-[#FFD166]/80 min-h-[44px] touch-manipulation;
+  }
+  
+  /* Mobile-optimized touch targets */
+  a, button {
+    @apply touch-manipulation;
+  }
+  
+  /* Prevent text size adjustment on iOS */
+  @supports (-webkit-touch-callout: none) {
+    input, textarea, select {
+      font-size: 16px !important;
+    }
   }
 }
 
